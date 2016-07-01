@@ -1,0 +1,69 @@
+Fonctionnalités avec Date
+    //////////////*liste de tous les événements auquels un membre a participé
+    //////////////*liste des événements du jour d'un membre (événements ou sorties de films suivis)
+
+*liste des futurs événements auxquels un membre a été invité (ordre décroissante)
+*liste des futurs événements auxquels un membre a invité d'autres membres
+*fonction pour accepter une invitation à un événement
+
+++++++++++++++++*fonction pour ajouter un événement(film, membres invités)
+
+//////////////liste des Films de films sortants ce mois-ci
+
+*liste des Films suggérées à un membre selon les catégories des films qu'il a suivis et les notes de catégories qu'il a indiqué
+
+
+Evenement
+dateEvenement
+film
+participant
+
+Membre{
+    suggest
+    follow
+    notification[
+        {
+            message,
+            dateFin,
+            isVue,
+            params[]
+        }
+    ]
+    evenement[
+        {
+            idFilm,
+            labelEvenement,
+            dateEvenement,
+            salle,
+            listeMembre[
+                {
+                    idMembre,
+                    accepter,
+                }
+            ]
+        }
+    ]
+}
+
+
+Film{
+    evenement[
+        labelEvenement,
+        dateEvenement,
+        salle,
+    ]
+}
+
+
+createEvenement($idMembre,$evenement,$membreRows)
+
+
+createEvenement{
+    //Prendre  le membre à mettre à jour
+    //Prendre  le Field evenement du membre
+    //Préparer l'évènement à insérer
+    //Préparer la liste des membres invités
+    //Préparer notification
+    //Mettre à jour la table Evenement avec la liste des anciens evenements+nouvel évenement
+    //Mettre à jour la table Notification
+}
